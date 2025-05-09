@@ -1,2 +1,0 @@
-# github
-Data Analyst Projects
