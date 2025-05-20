@@ -1,21 +1,32 @@
-# Medicare Part B Walkthrough
+# Medicare Part B SQL Walkthrough
 
 ## Creating Tables
 
-> We will be importing each individual excel file into their own seperate table within our database.
+After creating our MedicarePartB database, we will create a table with the correct table schema to serve as a template for importing CSV data for each corresponding year.
 ```sql
-CREATE TABLE medicare_part_b_spending (
-    id SERIAL PRIMARY KEY, -- Unique row identifier
-    year INT, -- Year of the spending record (2018–2022)
-    state VARCHAR(2), -- 2-letter state abbreviation
-    hcpcs_code VARCHAR(10), -- Healthcare Common Procedure Coding System code
-    hcpcs_description TEXT, -- Description of the HCPCS item
-    number_of_suppliers INT, -- Count of suppliers for the item
-    number_of_services INT, -- Number of services provided
-    total_submitted_charges NUMERIC(15,2), -- Total amount suppliers charged
-    total_allowed_amount NUMERIC(15,2), -- Medicare-approved total amount
-    total_medicare_payment_amount NUMERIC(15,2), -- Total paid by Medicare
-    average_supplier_payment NUMERIC(15,2), -- Avg payment per supplier
-    average_medicare_payment NUMERIC(15,2) -- Avg Medicare payment per service
+-- Creates 2018 table and table schema template for importing CSV into.
+CREATE TABLE "2018" (
+    RFRG_PRVDR_GEO_LVL VARCHAR(50) NOT NULL,
+    RFRG_PRVDR_GEO_CD VARCHAR(2),
+    RFRG_PRVDR_GEO_DESC VARCHAR(100),
+    RBCS_LVL VARCHAR(50) NOT NULL,
+    RBCS_ID CHAR(6) NOT NULL,
+    RBCS_DESC TEXT NOT NULL,
+    HCPCS_CD CHAR(5) NOT NULL,
+    HCPCS_DESC TEXT NOT NULL,
+    SUPLR_RENTL_IND CHAR(1) NOT NULL,
+    TOT_RFRG_PRVDRS INT NOT NULL,
+    TOT_SUPLRS INT NOT NULL,
+    TOT_SUPLR_BENES INT,
+    TOT_SUPLR_CLMS INT NOT NULL,
+    TOT_SUPLR_SRVCS INT NOT NULL,
+    AVG_SUPLR_SBMTD_CHRG NUMERIC(10, 2) NOT NULL,
+    AVG_SUPLR_MDCR_ALOWD_AMT NUMERIC(10, 2) NOT NULL,
+    AVG_SUPLR_MDCR_PYMT_AMT NUMERIC(10, 2) NOT NULL,
+    AVG_SUPLR_MDCR_STDZD_AMT NUMERIC(10, 2) NOT NULL,
+    YEAR INT DEFAULT 2018
 );
 ```
+>Note: We added a custom YEAR column that was not present in the original CSV file. This allows us to differentiate records by year when we later perform a UNION ALL across multiple year tables.
+
+
