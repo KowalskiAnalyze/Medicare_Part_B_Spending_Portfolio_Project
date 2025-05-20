@@ -1,9 +1,9 @@
-# Medicare Part B SQL Import & Setup
+# Medicare Part B Walkthrough
 
-## Step 1: Create Table
+## Creating Tables
 
+> We will be importing each individual excel file into their own seperate table within our database.
 ```sql
--- This table stores Medicare Part B spending data on DME by year, state, and HCPCS code.
 CREATE TABLE medicare_part_b_spending (
     id SERIAL PRIMARY KEY, -- Unique row identifier
     year INT, -- Year of the spending record (2018–2022)
