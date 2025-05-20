@@ -15,10 +15,8 @@ The goal is to evaluate national and regional spending behavior using the follow
 - **Average Supplier Medicare Payment Amount**
 - **Supplier Vs Medicare Charge Comparison**
 - **Medicare Payment Coverage Rate**
-
-This analysis plays a critical role in identifying spending trends, cost outliers, and opportunities for intervention to ultimately support better policymaking and financial oversight to ensure the Medicare program continues to serve those who need it most.
-
-Insights and recommendations are provided on the following key areas:
+- 
+Analysis and recommendations are provided on the following key areas:
 
 - **Regional Comparisons:** *Evaluate which states drive the highest Medicare spending and identify regional outliers.*
 - **Yearly Spending Trends:** *Track how total Medicare Part B spending has changed year-over-year to highlight rising costs or improved efficiencies.*
