@@ -15,7 +15,7 @@ The goal is to evaluate national and regional spending behavior using the follow
 - **Average Supplier Medicare Payment Amount**
 - **Supplier Vs Medicare Charge Comparison**
 - **Medicare Payment Coverage Rate**
-- 
+  
 Analysis and recommendations are provided on the following key areas:
 
 - **Regional Comparisons:** *Evaluate which states drive the highest Medicare spending and identify regional outliers.*
@@ -28,8 +28,6 @@ The SQL queries used to inspect and clean the data for this analysis can be foun
 Targed SQL queries regarding various business questions can be found here [link].
 
 An interactive Tableau dashboard used to report and explore sales trends can be found here [link].
-
-
 
 ## Data Structure & Initial Checks
 
