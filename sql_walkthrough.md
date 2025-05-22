@@ -91,6 +91,44 @@ SET
 ```
 Make sure to repeat these steps until you have all 5 tables imported for each year.
 
+## Combining Tables
+
+Now that we have all 5 tables for each year, we will combine them all using the UNION ALL function. 
+
+```sql
+CREATE TABLE "2018-2022" AS
+SELECT
+    *
+FROM
+    "2018"
+UNION ALL
+SELECT
+    *
+FROM
+    "2019"
+UNION ALL
+SELECT
+    *
+FROM
+    "2020"
+UNION ALL
+SELECT
+    *
+FROM
+    "2021"
+UNION ALL
+SELECT
+    *
+FROM
+    "2022";
+```
+This should create a new table which has a total of 367781 records. You can always double-check by verifying all the years are present:
+
+```sql
+SELECT DISTINCT year FROM public."2018-2022"
+ORDER BY year;
+```
+
 
 
 
