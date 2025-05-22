@@ -96,6 +96,7 @@ Make sure to repeat these steps until you have all 5 tables imported for each ye
 Now that we have all 5 tables for each year, we will combine them all using the UNION ALL function. 
 
 ```sql
+-- Creates a combined table for all the records between the years 2018-2022.
 CREATE TABLE "2018-2022" AS
 SELECT
     *
@@ -125,6 +126,7 @@ FROM
 This should create a new table which has a total of 367781 records. You can always double-check by verifying all the years are present:
 
 ```sql
+- Selects one of each year from the year column in the combined table for verfication.
 SELECT DISTINCT year FROM public."2018-2022"
 ORDER BY year;
 ```
