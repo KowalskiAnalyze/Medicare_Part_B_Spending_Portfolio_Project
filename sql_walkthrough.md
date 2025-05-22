@@ -93,41 +93,47 @@ Make sure to repeat these steps until you have all 5 tables imported for each ye
 
 ## Combining Tables
 
-Now that we have all 5 tables for each year, we will combine them all using the UNION ALL function. 
+Now that we have all 5 tables for each year, we will create a common table expression using the WITH and UNION ALL functions. 
 
 ```sql
--- Creates a combined table for all the records between the years 2018-2022.
-CREATE TABLE "2018-2022" AS
+-- Creates a temporary table for all the records between the years 2018-2022.
+WITH
+    COMBINED_DATA AS (
+        SELECT
+            *
+        FROM
+            "2018"
+        UNION ALL
+        SELECT
+            *
+        FROM
+            "2019"
+        UNION ALL
+        SELECT
+            *
+        FROM
+            "2020"
+        UNION ALL
+        SELECT
+            *
+        FROM
+            "2021"
+        UNION ALL
+        SELECT
+            *
+        FROM
+            "2022"
+    )
 SELECT
     *
 FROM
-    "2018"
-UNION ALL
-SELECT
-    *
-FROM
-    "2019"
-UNION ALL
-SELECT
-    *
-FROM
-    "2020"
-UNION ALL
-SELECT
-    *
-FROM
-    "2021"
-UNION ALL
-SELECT
-    *
-FROM
-    "2022";
+    COMBINED_DATA
 ```
-This should create a new table which has a total of 367781 records. You can always double-check by verifying all the years are present:
+This should create a new dataset which has a total of 367781 records. You can always double-check by verifying all the years are present:
 
 ```sql
 -- Selects one of each year from the year column in the combined table for verfication.
-SELECT DISTINCT year FROM public."2018-2022"
+SELECT DISTINCT year FROM COMBINED_DATA
 ORDER BY year;
 ```
 
