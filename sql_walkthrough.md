@@ -27,7 +27,7 @@ CREATE TABLE "2018" (
     YEAR INT DEFAULT 2018 NOT NULL -- Make sure this value matches the name of the table.
 );
 ```
-> **IMPORTANT**: We added a custom YEAR column that does not exist in the original CSV file. This allows us to differentiate records by year when we later perform a UNION ALL across multiple year tables.
+> **NOTE**: We added a custom YEAR column that does not exist in the original CSV file. This allows us to differentiate records by year when we later perform a UNION ALL across multiple year tables.
 
 Now that we have our **"2018"** table to use as a template, we can save time and create the other table years for our analysis:
 
@@ -78,7 +78,7 @@ Be sure to check each table to verify the year column values match the name of t
 SELECT
     YEAR,
     *
-FROM  "2019"
+FROM  "2019";
 ```
 
 If you forgot to update the default value in the table's properties before importing, you can always manually set these values with a query:
@@ -87,7 +87,7 @@ If you forgot to update the default value in the table's properties before impor
 -- Updates the correct value by matching the year value to the correct table year.
 UPDATE "2019"
 SET
-    YEAR='2019'
+    YEAR='2019';
 ```
 Make sure to repeat these steps until you have all 5 tables imported for each year.
 
@@ -127,15 +127,105 @@ WITH
 SELECT
     *
 FROM
-    COMBINED_DATA
+    COMBINED_DATA;
 ```
-This should create a new dataset which has a total of 367781 records. You can always double-check by verifying all the years are present:
+This should create a new dataset which has a total of 367781 records.
+
+> **NOTE**: For readability and to save space, we’ll omit the full CTE definition in the remaining queries. Assume that the CTE has been declared above each future query in this walkthrough and is available for use.
+
+You can always double-check by verifying that all the years are present:
 
 ```sql
 -- Selects one of each year from the year column in the combined table for verfication.
-SELECT DISTINCT year FROM COMBINED_DATA
-ORDER BY year;
+SELECT DISTINCT
+    YEAR
+FROM
+    COMBINED_DATA
+ORDER BY
+    YEAR;
 ```
+> **Result:**
+> |year |
+> |:--- |
+> |2018 |
+> |2019 |
+> |2020 |
+> |2021 |
+> |2022 |
+
+## Filtering to State-Level
+
+If we take a look at the **"rfrg_prvdr_geo_desc"** column, we can notice that this dataset includes national data:
+
+```sql
+-- Showcases the different regions included in the datasets.
+SELECT DISTINCT
+    RFRG_PRVDR_GEO_DESC
+FROM
+    COMBINED_DATA;
+```
+This analysis focuses on Medicare Part B data from the 50 U.S. states. Regions such as U.S. territories, military postal codes, and ambiguous entries (e.g., ‘Unknown’, ‘National’) will be excluded to maintain a consistent state-level comparison. We will be using a WHERE function to filter out these regions:
+
+```sql
+SELECT
+    *
+FROM
+    COMBINED_DATA
+WHERE
+    RFRG_PRVDR_GEO_DESC NOT IN (
+        'Puerto Rico',
+        'Guam',
+        'Virgin Islands',
+        'Armed Forces Europe',
+        'Armed Forces Pacific',
+        'Foreign Country',
+        'District of Columbia',
+        'National',
+        'Unknown',
+        'Northern Mariana Islands',
+        'Armed Forces Central/South America'
+    )
+    AND RFRG_PRVDR_GEO_DESC IS NOT NULL;
+```
+We can verify our filter by counting the number of distinct states grouped by year. If done correctly, each year should only have 50 states:
+
+```sql
+SELECT
+    YEAR,
+    COUNT(DISTINCT RFRG_PRVDR_GEO_DESC) AS NUMBER_OF_STATES
+FROM
+    COMBINED_DATA
+WHERE
+    RFRG_PRVDR_GEO_DESC NOT IN (
+        'Puerto Rico',
+        'Guam',
+        'Virgin Islands',
+        'Armed Forces Europe',
+        'Armed Forces Pacific',
+        'Foreign Country',
+        'District of Columbia',
+        'National',
+        'Unknown',
+        'Northern Mariana Islands',
+        'Armed Forces Central/South America'
+    )
+    AND RFRG_PRVDR_GEO_DESC IS NOT NULL
+GROUP BY
+    YEAR
+ORDER BY
+    YEAR;
+```
+> **Result:**
+> |year |number_of_states | 
+> |:--- |---:| 
+> |2018 | 50|
+> |2019 | 50|
+> |2020 | 50|
+> |2021 | 50|
+> |2022 | 50|
+
+
+
 
 
 
