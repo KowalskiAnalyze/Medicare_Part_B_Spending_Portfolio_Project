@@ -126,7 +126,7 @@ FROM
 This should create a new table which has a total of 367781 records. You can always double-check by verifying all the years are present:
 
 ```sql
-- Selects one of each year from the year column in the combined table for verfication.
+-- Selects one of each year from the year column in the combined table for verfication.
 SELECT DISTINCT year FROM public."2018-2022"
 ORDER BY year;
 ```
