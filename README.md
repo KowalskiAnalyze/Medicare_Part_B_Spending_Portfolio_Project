@@ -1,4 +1,4 @@
-# Medicare Part B: Regional and National Spending Patterns (2018–2022)
+# Medicare Part B: State-Level Spending Patterns (2018–2022)
 
 ## Background & Overview
 Established in 1965, Medicare is a vital federal program that provides access to affordable medical services for over 67 million beneficiaries. It is primarily funded through payroll taxes, general federal revenues, and enrollee premiums. Because it’s publicly funded, every dollar spent must be justified to maintain a balance between patient access, cost-efficiency, and long-term sustainability.
@@ -7,10 +7,10 @@ Medicare is divided into four parts—this project focuses on Part B, which cove
 
 This analysis uses publicly available datasets from the Centers for Medicare & Medicaid Services (CMS), detailing Medicare Part B spending on DME and supplies from 2018 to 2022, broken down by state and HCPCS code.
 
-The goal is to evaluate national and regional spending behavior using the following key performance indicators (KPIs):
+The goal is to evaluate state-level spending behavior using the following key performance indicators (KPIs):
 
 - **Medicare Spending per HCPCS Code**
-- **Total Yearly National Medicare Part B Spending**
+- **Total Yearly State-Level Medicare Part B Spending**
 - **Total Number of Suppliers per Region**
 - **Average Supplier Medicare Payment Amount**
 - **Supplier Vs Medicare Charge Comparison**
@@ -19,9 +19,9 @@ The goal is to evaluate national and regional spending behavior using the follow
 Analysis and recommendations are provided on the following key areas:
 
 - **Regional Comparisons:** *Evaluate which states drive the highest Medicare spending and identify regional outliers.*
-- **Yearly Spending Trends:** *Track how total Medicare Part B spending has changed year-over-year to highlight rising costs or improved efficiencies.*
+- **Yearly Spending Trends:** *Track how total Medicare Part B state-level spending has changed year-over-year to highlight rising costs or improved efficiencies.*
 - **Supplier Behavior and Pricing:** *Examine gaps between supplier-submitted charges, Medicare-approved rates, and actual Medicare payments to flag irregular pricing practices.*
-- **High-Cost Item Concentration:** *Evaluate which DME and medical supplies account for the largest share of national spending.*
+- **High-Cost Item Concentration:** *Evaluate which DME and medical supplies account for the largest share of state-level spending.*
 
 The SQL queries used to inspect and clean the data for this analysis can be found here [link].
 
