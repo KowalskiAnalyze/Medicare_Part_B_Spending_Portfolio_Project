@@ -23,11 +23,9 @@ Analysis and recommendations are provided on the following key areas:
 - **Supplier Behavior and Pricing:** *Examine gaps between supplier-submitted charges, Medicare-approved rates, and actual Medicare payments to flag irregular pricing practices.*
 - **High-Cost Item Concentration:** *Evaluate which DME and medical supplies account for the largest share of state-level spending.*
 
-The SQL queries used to inspect and clean the data for this analysis can be found here [link].
-
-Targed SQL queries regarding various business questions can be found here [link].
-
 An interactive Tableau dashboard used to report and explore sales trends can be found here [link].
+
+A SQL query walkthrough showcasing the combining and cleaning of data can be found [here](sql_walkthrough.md). 
 
 ## Data Structure & Initial Checks
 
