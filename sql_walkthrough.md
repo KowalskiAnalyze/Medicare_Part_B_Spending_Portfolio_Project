@@ -1,5 +1,13 @@
 # Medicare Part B SQL Walkthrough
 
+## Table Of Contents
+- [Importing CSV Files to SQL](#importing-csv-files-to-sql)
+- [Combining Tables](#combining-tables)
+- [Filtering to State-Level](#filtering-to-state-level)
+- [Creating Calculated Fields](#creating-calculated-fields)
+- [Final Query](#final-query)
+
+
 ## Importing CSV Files to SQL
 
 After creating our MedicarePartB database, we will create a table with the correct table schema to serve as a template for importing CSV data for each corresponding year:
@@ -133,7 +141,7 @@ This should create a new dataset which has a total of 367781 records.
 
 > **NOTE**: For readability and to save space, we’ll omit the full CTE definition in the remaining queries. Assume that the CTE has been declared above each future query in this walkthrough and is available for use.
 
-You can always double-check by verifying that all the years are present:
+We can always double-check by verifying that all the years are present:
 
 ```sql
 -- Selects one of each year from the year column in the combined table for verfication.
@@ -223,6 +231,99 @@ ORDER BY
 > |2020 | 50|
 > |2021 | 50|
 > |2022 | 50|
+
+## Creating Calculated Fields
+
+Now that our combined dataset is cleaned and filtered to include only the 50 U.S. states, we can begin creating new fields that will help us analyze key performance indicators more effectively.
+
+### **1. Total Medicare Payment**
+
+To understand how much Medicare actually paid out per record, we can multiply the average payment amount per service by the total number of services provided by the supplier:
+
+```sql
+ AVG_SUPLR_MDCR_PYMT_AMT * TOT_SUPLR_SRVCS AS TOTAL_MDCR_PAYMENT
+```
+Later in our analysis, this field will be aggregated (summed) to calculate total Medicare Part B spending per year at the state level.
+
+### **2. Payment Gap (Charged vs. Paid)**
+
+This field measures the difference between the average amount the supplier charged and the average amount Medicare actually paid per service. It helps us identify how much higher the supplier’s submitted charges were compared to what Medicare ultimately reimbursed:
+
+```sql
+AVG_SUPLR_SBMTD_CHRG_AMT - AVG_SUPLR_MDCR_PYMT_AMT AS PAYMENT_GAP
+```
+A larger payment gap can indicate that Medicare successfully reduced high submitted charges. For patients, this often translates into significant cost savings. However, consistently large gaps may also point to systemic overbilling in certain categories or regions.
+
+### **3. Percentage Medicare Covered**
+
+On average, Medicare pays approximately 80% of the allowed amount for most services, with the remaining 20% typically covered by the patient or a supplemental plan. This percentage serves as a benchmark when analyzing Medicare coverage ratios across different states, providers, or years:
+
+```sql
+CASE 
+    WHEN AVG_SUPLR_MDCR_ALOWD_AMT = 0 THEN NULL
+    ELSE (AVG_SUPLR_MDCR_PYMT_AMT / AVG_SUPLR_MDCR_ALOWD_AMT) * 100
+END AS PCT_MDCR_COVERED
+```
+A small portion of records had an average allowed payment amount of zero, indicating services which were completely covered by Medicare. To handle these cases and avoid division by zero errors, we used a CASE WHEN statement to handle these small exceptions. 
+
+## Final Query
+
+```sql
+WITH
+    COMBINED_DATA AS (
+        SELECT
+            *
+        FROM
+            "2018"
+        UNION ALL
+        SELECT
+            *
+        FROM
+            "2019"
+        UNION ALL
+        SELECT
+            *
+        FROM
+            "2020"
+        UNION ALL
+        SELECT
+            *
+        FROM
+            "2021"
+        UNION ALL
+        SELECT
+            *
+        FROM
+            "2022"
+    )
+SELECT
+    *,
+    AVG_SUPLR_MDCR_PYMT_AMT*TOT_SUPLR_SRVCS AS TOTAL_MDCR_PAYMENT,
+    AVG_SUPLR_SBMTD_CHRG-AVG_SUPLR_MDCR_PYMT_AMT AS PAYMENT_GAP,
+    CASE
+        WHEN AVG_SUPLR_MDCR_ALOWD_AMT=0 THEN NULL
+        ELSE (AVG_SUPLR_MDCR_PYMT_AMT/AVG_SUPLR_MDCR_ALOWD_AMT)*100
+    END AS PCT_MDCR_COVERED
+FROM
+    COMBINED_DATA
+WHERE
+    RFRG_PRVDR_GEO_DESC NOT IN (
+        'Puerto Rico',
+        'Guam',
+        'Virgin Islands',
+        'Armed Forces Europe',
+        'Armed Forces Pacific',
+        'Foreign Country',
+        'District of Columbia',
+        'National',
+        'Unknown',
+        'Northern Mariana Islands',
+        'Armed Forces Central/South America'
+    )
+    AND RFRG_PRVDR_GEO_DESC IS NOT NULL;
+```
+
+
 
 
 
