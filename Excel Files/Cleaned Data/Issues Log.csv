@@ -1,0 +1,7 @@
+Table,Column(s),Type of Issue,Issue Description,Solvable?,Action Taken
+Orders,"'rfrg_prvdr_geo_lvl', 'rfrg_prvdr_geo_cd', 'suplr_rentl_ind'",Redundance,Columns are not relevant to analysis and add unnecessary bulk,Y,Dropped these columns to streamline dataset
+Orders,All,Naming,Column names are too abstract or unclear ,Y,Renamed columns to clear names
+Orders,'Supplier Beneficiaries',Null Values,NULL Values appear whenever there are less than 11 beneficiaries for HIPAA protection,Y,"Added note to explain reason for NULL values, changes NULL values to blanks to assure no errors during aggregation."
+Orders,"Average Supplier Submitted Charges', 'Average Medicare Allowed Amount', 'Average Medicare Payment Amount', 'Average Medicare Standardized Payment Amount', 'Total Medicare Cost', 'Payment Gap'",Formatting,Column values are shown as general numbers.,Y,Changed general values to US currency values.
+Orders,'Percentage Medicare Coverage',Formatting,Column values are shown as general numbers.,Y,Converted general values to percentages.
+Orders,"'Referring Providers', 'Suppliers', 'Supplier Beneficiaries', 'Supplier Claims', 'Supplier Services'",Formatting,Column values are shown as general numbers.,Y,Converted general values to numbers.
