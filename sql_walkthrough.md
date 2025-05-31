@@ -101,7 +101,7 @@ Make sure to repeat these steps until you have all 5 tables imported for each ye
 
 ## Combining Tables
 
-Now that we have all 5 tables for each year, we will create a common table expression using the WITH and UNION ALL functions. 
+Now that we have all 5 tables for each year, we will create a common table expression using the `WITH` and `UNION ALL` functions. 
 
 ```sql
 -- Creates a temporary table for all the records between the years 2018-2022.
@@ -163,7 +163,7 @@ ORDER BY
 
 ## Filtering to State-Level
 
-If we take a look at the **"rfrg_prvdr_geo_desc"** column, we can notice that this dataset includes national data:
+If we take a look at the `rfrg_prvdr_geo_desc` column, we can notice that this dataset includes national data:
 
 ```sql
 -- Showcases the different regions included in the datasets.
@@ -172,7 +172,7 @@ SELECT DISTINCT
 FROM
     COMBINED_DATA;
 ```
-This analysis focuses on Medicare Part B data from the 50 U.S. states. Regions such as U.S. territories, military postal codes, and ambiguous entries (e.g., ‘Unknown’, ‘National’) will be excluded to maintain a consistent state-level comparison. We will be using a WHERE function to filter out these regions:
+This analysis focuses on Medicare Part B data from the 50 U.S. states. Regions such as U.S. territories, military postal codes, and ambiguous entries (e.g., ‘Unknown’, ‘National’) will be excluded to maintain a consistent state-level comparison. We will be using a `WHERE` function to filter out these regions:
 
 ```sql
 SELECT
