@@ -245,7 +245,16 @@ To understand how much Medicare actually paid out per record, we can multiply th
 ```
 Later in our analysis, this field will be aggregated (summed) to calculate total Medicare Part B spending per year at the state level.
 
-### **2. Payment Gap (Charged vs. Paid)**
+### **2. Total Medicare Payment Standardized**
+
+To enable fair comparisons of Medicare costs across different geographic regions, Medicare also reports standardized payment amounts, which remove regional pricing variations.
+We calculate the Total Medicare Payment Standardized by multiplying the average standardized payment amount by the total number of services:
+
+```sql
+AVG_SUPLR_MDCR_STDZD_AMT * TOT_SUPLR_SRVCS AS TOTAL_STDZD_MDCR_PAYMENT
+```
+
+### **3. Payment Gap (Charged vs. Paid)**
 
 This field measures the difference between the average amount the supplier charged and the average amount Medicare actually paid per service. It helps us identify how much higher the supplier’s submitted charges were compared to what Medicare ultimately reimbursed:
 
@@ -254,7 +263,7 @@ AVG_SUPLR_SBMTD_CHRG_AMT - AVG_SUPLR_MDCR_PYMT_AMT AS PAYMENT_GAP
 ```
 A larger payment gap can indicate that Medicare successfully reduced high submitted charges. For patients, this often translates into significant cost savings. However, consistently large gaps may also point to systemic overbilling in certain categories or regions.
 
-### **3. Percentage Medicare Covered**
+### **4. Percentage Medicare Covered**
 
 On average, Medicare pays approximately 80% of the allowed amount for most services, with the remaining 20% typically covered by the patient or a supplemental plan. This percentage serves as a benchmark when analyzing Medicare coverage ratios across different states, providers, or years:
 
@@ -299,6 +308,7 @@ WITH
 SELECT
     *,
     AVG_SUPLR_MDCR_PYMT_AMT*TOT_SUPLR_SRVCS AS TOTAL_MDCR_PAYMENT,
+    AVG_SUPLR_MDCR_STDZD_AMT * TOT_SUPLR_SRVCS AS TOTAL_STDZD_MDCR_PAYMENT,
     AVG_SUPLR_SBMTD_CHRG-AVG_SUPLR_MDCR_PYMT_AMT AS PAYMENT_GAP,
     CASE
         WHEN AVG_SUPLR_MDCR_ALOWD_AMT=0 THEN NULL
