@@ -23,7 +23,7 @@ Analysis and recommendations are provided on the following key areas:
 - **Supplier Behavior and Pricing:** *Examine gaps between supplier-submitted charges, Medicare-approved rates, and actual Medicare payments to flag irregular pricing practices.*
 - **High-Cost Item Concentration:** *Evaluate which DMEPOS account for the largest share of state-level spending.*
 
-An interactive Tableau dashboard used to report and explore sales trends can be found here [link].
+An interactive Tableau dashboard can be found [here](https://public.tableau.com/views/MedicarePartBDashboard2018-2022/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 
 A SQL query walkthrough showcasing the combining and cleaning of data can be found [here](sql_walkthrough.md). 
 
