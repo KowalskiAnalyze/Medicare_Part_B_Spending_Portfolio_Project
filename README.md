@@ -64,10 +64,9 @@ Below is a breakdown of the structure and contents of each table:
 
 ### Overview of Findings
 
-Explain the overarching findings, trends, and themes in 2-3 sentences here. This section should address the question: "If a stakeholder were to take away 3 main insights from your project, what are the most important things they should know?" You can put yourself in the shoes of a specific stakeholder - for example, a marketing manager or finance director - to think creatively about this section.
+Between 2018 and 2022, Medicare Part B spending on DMEPOS totaled over **$75 billion** with standardized payments revealing consistently higher costs in populous states with higher aging and retiree communities such as **Texas**, **Flordia**, and **California**. There was a sharp **107.2% increase** in spending from 2018 to 2019, likely driven by reporting or policy changes, followed by relatively stable totals through 2022. Over **16%** of Medicare Part B spending is concentrated in just three categories: **home ventilators**, **oxygen concentrators**, and **glucose monitoring supplies**. On average, Medicare covered **76.4%** of the allowed costs and saving beneficiaries approximately **$325** per service compared to the full supplier charge.
 
-[Visualization, including a graph of overall trends or snapshot of a dashboard]
-
+![Medicare Part B Snapshot](https://github.com/user-attachments/assets/f56e8fde-ea92-4bb2-98c3-c1af366a497b)
 
 
 ## Insights Deep Dive
