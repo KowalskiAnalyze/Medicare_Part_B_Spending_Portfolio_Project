@@ -102,17 +102,13 @@ This chart illustrates the average percentage of costs covered by Medicare from 
 
 ### **High-Cost Item Concentration:**
 
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+An analysis of state-level DMEPOS spending reveals that just a few high-cost items account for a disproportionate share of total Medicare expenditures. For example, home ventilators (E0466), oxygen concentrators (E1390), and glucose monitoring systems (K0553) consistently ranked among the top 3 most costly services across many states and have contributed to over 16.1% of total Medicare Part B spending between 2018 and 2022 despite there being over 1,481 other services available.
 
-[Visualization specific to category 4]
+To better understand cost dynamics over time for the most financially significant equipment types, the chart below tracks spending trends for these top 3 items across five years:
 
+<img width="1409" height="717" alt="image" src="https://github.com/user-attachments/assets/beb69d47-6493-4b7e-b748-9f3c854cbf14" />
 
+While all three saw significant growth from 2018 to 2020, only glucose monitoring equipment has shown continued acceleration and doubling between 2020 and 2022, reaching nearly $1.73 billion in 2022 alone. In contrast, ventilator and oxygen-related costs have plateaued or slightly declined in the past two years which could suggests stabilized utilization or pricing.
 
 ## Recommendations:
 
@@ -126,7 +122,7 @@ Based on the insights and findings above, we would recommend the [stakeholder te
   
 * Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
   
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
+* The utilization of diabetic monitoring services seems to be accelerating at an alarming rate which will continue to heavily impact the medicare budget if not dealt with. 
   
 
 
