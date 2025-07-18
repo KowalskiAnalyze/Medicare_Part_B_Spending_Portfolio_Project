@@ -112,17 +112,30 @@ While all three saw significant growth from 2018 to 2020, only glucose monitorin
 
 ## Recommendations:
 
-Based on the insights and findings above, we would recommend the [stakeholder team] to consider the following: 
+Based on the insights and findings above, we would recommend CMS to consider the following: 
 
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* The utilization of diabetic monitoring services seems to be accelerating at an alarming rate which will continue to heavily impact the medicare budget if not dealt with. 
+The sudden 107% spike in spending between 2018 and 2019 should be treated as a major red flag. This sharp increase demands further investigation to determine whether it was driven by a policy change, broader eligibility criteria, changes in reporting practices, or potential supplier behavior. Regardless of the cause, the fact remains that Medicare Part B’s spending baseline has effectively doubled since 2018, jumping from $10.2 million to $21.2 million annually.
+
+While spending has remained relatively stable post-2019, it has done so at this elevated level, which raises concerns about long-term sustainability. CMS must ensure that this jump was justified and that it isn’t a warning of another unsustainable increase in the future.
+
+To ensure the best use of taxpayer dollars, the following actions are recommended:
+
+- **Conduct a Root-Cause Audit of the 2019 Spike:**
+Analyze policy changes, reimbursement adjustments, supplier activity, and beneficiary eligibility to identify the primary drivers of the cost surge.
+
+- **Increase Supplier Oversight:**
+Implement more robust monitoring of supplier pricing and billing behavior, especially in high-volume states or for high-cost equipment categories.
+
+- **Targeted Outlier Analysis:**
+Identify suppliers and regions with spending significantly above the national average. Prioritize them for compliance reviews and potential corrective actions.
+
+- **Invest in Prevention & Alternative Care:**
+A significant portion of DMEPOS spending, over 16% of the total budget from 2018 to 2022, is concentrated in just two categories: diabetic monitoring supplies and oxygen-related services. These items reflect chronic conditions that can often be mitigated or better managed through early intervention, education, and preventative care programs.
+By investing upstream in initiatives such as diabetes prevention programs, smoking cessation efforts, and improved access to primary care and nutrition counseling, CMS may reduce the number of beneficiaries who progress to needing these high cost and popular DMEPOS supplies. Not only could this ease financial strain on the program, but it would also support better health outcomes and improved quality of life for patients.
+These efforts should go hand-in-hand with supplier oversight to ensure that those who do need these items are getting them at fair prices and in appropriate quantities.
+
+- **Pilot Cost-Containment Programs in High-Spending States:**
+Given that Texas, Florida, and California consistently lead in spending, these states could serve as ideal pilot regions for scalable cost-containment initiatives focused on fair supplier pricing, access equity, and efficiency.
   
 
 
