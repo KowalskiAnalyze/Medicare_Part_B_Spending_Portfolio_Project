@@ -2,16 +2,21 @@
 
 ## Table of Contents
 
-[Background & Overview](#background-&-overview)
-
-[Data Structure](#data-structure)
-
-[Executive Summary](#executive-summary)
-
-
-
-
-
+- [Background & Overview](#background-&-overview)
+- [Data Structure](#data-structure)
+- [Executive Summary](#executive-summary)
+  - [Overview of Findings](#overview-of-findings)
+- [Insights Deep Dive](#Insights-Deep-Dive)
+  - [Regional Comparisons](#Regional-Comparisons)
+  - [Yearly Spending Trends](#Yearly-Spending-Trends)
+  - [Supplier Behavior and Pricing](#Supplier-Behavior-and-Pricing)
+  - [High-Cost Item Concentration](#High-Cost-Item-Concentration)
+- [Recommendations](#Recommendations)
+  - [Conduct a Root-Cause Audit of the 2019 Spike](#Conduct-a-Root-Cause-Audit-of-the-2019-Spike)
+  - [Invest in Prevention & Alternative Care](#Invest-in-Prevention-&-Alternative-Care)
+  - [Pilot Cost-Containment Programs in High-Spending States](#Pilot-Cost-Containment-Programs-in-High-Spending-States)
+- [Assumptions and Caveats](#Assumptions-and-Caveats)
+  
 ## Background & Overview
 Established in 1965, Medicare is a vital federal program that provides access to affordable medical services for over 67 million beneficiaries. It is primarily funded through payroll taxes, general federal revenues, and enrollee premiums. Because it’s publicly funded, every dollar spent must be justified to maintain a balance between patient access, cost-efficiency, and long-term sustainability.
 
