@@ -1,16 +1,12 @@
 # Medicare Part B SQL Walkthrough
 
 ## Table Of Contents
-[Importing CSV Files to SQL](#importing-csv-files-to-sql)
 
-[Combining Tables](#combining-tables)
-
-[Filtering to State-Level](#filtering-to-state-level)
-
-[Creating Calculated Fields](#creating-calculated-fields)
-
-[Final Query](#final-query)
-
+- [Importing CSV Files to SQL](#importing-csv-files-to-sql)
+- [Combining Tables](#combining-tables)
+- [Filtering to State-Level](#filtering-to-state-level)
+- [Creating Calculated Fields](#creating-calculated-fields)
+- [Final Query](#final-query)
 
 ## Importing CSV Files to SQL
 
