@@ -1,5 +1,9 @@
 # Medicare Part B: State-Level Spending Patterns (2018–2022)
 
+## Table of Contents
+[Background & Overview](#Background-&-Overview)
+
+
 ## Background & Overview
 Established in 1965, Medicare is a vital federal program that provides access to affordable medical services for over 67 million beneficiaries. It is primarily funded through payroll taxes, general federal revenues, and enrollee premiums. Because it’s publicly funded, every dollar spent must be justified to maintain a balance between patient access, cost-efficiency, and long-term sustainability.
 
@@ -87,7 +91,6 @@ Between 2018 and 2019, Medicare Part B spending experienced a dramatic 107% incr
 
 The stability that followed offers a window of opportunity for policymakers and healthcare analysts to explore cost-containment strategies. With spending now on a predictable plateau, targeted interventions such as optimizing supplier pricing, encouraging preventive care, or reassessing reimbursement for high-cost equipment could lead to sustainable cost reductions. Additionally, investigating the root causes of the 2019 spike could uncover areas of overspending, fraud, or inefficiency that may still be present but now embedded in the baseline. Understanding this sharp inflection point is key to identifying both the risks and opportunities in long-term Medicare budgeting.
 
-
 ### **Supplier Behavior and Pricing:**
 
 ![image](https://github.com/user-attachments/assets/a887e7ea-bc59-4a9f-829d-e8f011ba218c)
@@ -97,8 +100,6 @@ This bar chart displays the average payment gap by state from 2018 to 2022, with
 ![image](https://github.com/user-attachments/assets/57d9795e-1f1a-4e29-8d5c-feda84346fa8)
 
 This chart illustrates the average percentage of costs covered by Medicare from 2018 to 2022 across all 50 states. The national average between 2018 and 2022 sits at 76.3%, with states like Florida, New Jersey, and Arizona leading the way as Medicare covers a larger share of costs in these areas. On the opposite end, states like Vermont, Hawaii, and West Virginia fall below the national average which indicates a higher financial burden on patients. This insight is crucial because it helps identify where patients may be more exposed to out-of-pocket expenses and signals opportunities for improving coverage equity. Stakeholders can use this data to evaluate whether policy adjustments or support programs are needed in low-coverage states to ease patient costs and improve healthcare access.
-
-
 
 ### **High-Cost Item Concentration:**
 
@@ -114,37 +115,24 @@ While all three saw significant growth from 2018 to 2020, only glucose monitorin
 
 Based on the insights and findings above, we would recommend CMS to consider the following: 
 
-The sudden 107% spike in spending between 2018 and 2019 should be treated as a major red flag. This sharp increase demands further investigation to determine whether it was driven by a policy change, broader eligibility criteria, changes in reporting practices, or potential supplier behavior. Regardless of the cause, the fact remains that Medicare Part B’s spending baseline has effectively doubled since 2018, jumping from $10.2 million to $21.2 million annually.
+### **Conduct a Root-Cause Audit of the 2019 Spike:**
+The 107% spike in spending between 2018 and 2019 is a major red flag. This sharp increase demands further investigation to determine whether it was driven by a policy change, broader eligibility criteria, changes in reporting practices, or potential supplier behavior. While spending has remained relatively stable post-2019, it has done so at this elevated level, which raises concerns about long-term sustainability. CMS must ensure that this jump was justified and is not a early warning signal of another unsustainable increase in the future.
 
-While spending has remained relatively stable post-2019, it has done so at this elevated level, which raises concerns about long-term sustainability. CMS must ensure that this jump was justified and that it isn’t a warning of another unsustainable increase in the future.
+### **Invest in Prevention & Alternative Care:**
+Over 16% of total DMEPOS spending from 2018 to 2022 is concentrated in just two categories: diabetic monitoring supplies and oxygen-related services. These items reflect chronic conditions that can often be mitigated or better managed through early intervention, education, and preventative care programs.
+By investing upstream in initiatives such as diabetes prevention programs, smoking cessation efforts, and improved access to primary care and nutrition counseling, CMS may reduce the number of beneficiaries who progress to needing these high cost and demand DMEPOS supplies. Not only could this ease financial strain on the program, but it would also support better health outcomes and improved quality of life for patients.
 
-To ensure the best use of taxpayer dollars, the following actions are recommended:
-
-- **Conduct a Root-Cause Audit of the 2019 Spike:**
-Analyze policy changes, reimbursement adjustments, supplier activity, and beneficiary eligibility to identify the primary drivers of the cost surge.
-
-- **Increase Supplier Oversight:**
-Implement more robust monitoring of supplier pricing and billing behavior, especially in high-volume states or for high-cost equipment categories.
-
-- **Targeted Outlier Analysis:**
-Identify suppliers and regions with spending significantly above the national average. Prioritize them for compliance reviews and potential corrective actions.
-
-- **Invest in Prevention & Alternative Care:**
-A significant portion of DMEPOS spending, over 16% of the total budget from 2018 to 2022, is concentrated in just two categories: diabetic monitoring supplies and oxygen-related services. These items reflect chronic conditions that can often be mitigated or better managed through early intervention, education, and preventative care programs.
-By investing upstream in initiatives such as diabetes prevention programs, smoking cessation efforts, and improved access to primary care and nutrition counseling, CMS may reduce the number of beneficiaries who progress to needing these high cost and popular DMEPOS supplies. Not only could this ease financial strain on the program, but it would also support better health outcomes and improved quality of life for patients.
-These efforts should go hand-in-hand with supplier oversight to ensure that those who do need these items are getting them at fair prices and in appropriate quantities.
-
-- **Pilot Cost-Containment Programs in High-Spending States:**
+### **Pilot Cost-Containment Programs in High-Spending States:**
 Given that Texas, Florida, and California consistently lead in spending, these states could serve as ideal pilot regions for scalable cost-containment initiatives focused on fair supplier pricing, access equity, and efficiency.
+
   
-
-
 ## Assumptions and Caveats:
 
 Throughout the analysis, multiple assumptions were made to manage challenges with the data. These assumptions and caveats are noted below:
 
-* Assumption 1 (ex: missing country records were for customers based in the US, and were re-coded to be US citizens)
-  
-* Assumption 1 (ex: data for December 2021 was missing - this was imputed using a combination of historical trends and December 2020 data)
-  
-* Assumption 1 (ex: because 3% of the refund date column contained non-sensical dates, these were excluded from the analysis)
+- The analysis was limited to the 50 U.S. states, excluding territories and outlying regions present in the raw data. This decision was made to ensure comparability across states and focus on regions with the largest share of Medicare Part B spending.
+- All cost figures used were the standardized Medicare allowed amounts to remove geographic payment variations and allow for fair comparison across different states and years. This approach prioritizes trends and relative growth rather than raw spending totals.
+- The analysis concentrated on the top three most frequently reimbursed DMEPOS supply categories: diabetic monitoring supplies, oxygen services, and CPAP-related equipment. While these account for a substantial portion of overall spending and are representative of broader trends, it is possible that other categories experienced equal or greater fluctuations that were not captured in this summary.
+- No imputation or correction was applied to handle potential data reporting errors, particularly regarding the sudden spike in 2019. The analysis assumes that the data reflects accurate reporting and reimbursement figures from CMS.
+- The analysis did not normalize spending based on changes in population size or aging demographics across states. Increases in spending could be partially due to growing Medicare enrollment or rising chronic condition prevalence rather than cost growth alone.
+- The spending values across years were compared directly without adjusting for inflation. As a result, some of the growth may be due to natural increases in cost of goods and services rather than a true change in utilization or policy.
