@@ -1,7 +1,15 @@
 # Medicare Part B: State-Level Spending Patterns (2018–2022)
 
 ## Table of Contents
-[Background & Overview](#Background-&-Overview)
+
+[Background & Overview](#background-&-overview)
+
+[Data Structure](#data-structure)
+
+[Executive Summary](#executive-summary)
+
+
+
 
 
 ## Background & Overview
